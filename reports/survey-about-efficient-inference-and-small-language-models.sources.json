@@ -1,0 +1,122 @@
+[
+  {
+    "n": 1,
+    "id": "2401.04081",
+    "url": "https://arxiv.org/abs/2401.04081",
+    "title": "MoE-Mamba: Efficient Selective State Space Models with Mixture of Experts",
+    "date": "2024-01-08",
+    "source": "arxiv"
+  },
+  {
+    "n": 2,
+    "id": "2402.01771",
+    "url": "https://arxiv.org/abs/2402.01771",
+    "title": "BlackMamba: Mixture of Experts for State-Space Models",
+    "date": "2024-02-01",
+    "source": "arxiv"
+  },
+  {
+    "n": 3,
+    "id": "2404.00456",
+    "url": "https://huggingface.co/papers/2404.00456",
+    "title": "QuaRot: Outlier-Free 4-Bit Inference in Rotated LLMs",
+    "date": "2024-03-30",
+    "source": "hf-search"
+  },
+  {
+    "n": 4,
+    "id": "2407.09527",
+    "url": "https://huggingface.co/papers/2407.09527",
+    "title": "BitNet b1.58 Reloaded: State-of-the-art Performance Also on Smaller Networks",
+    "date": "2024-06-24",
+    "source": "hf-search"
+  },
+  {
+    "n": 5,
+    "id": "2502.13178",
+    "url": "https://huggingface.co/papers/2502.13178",
+    "title": "Benchmarking Post-Training Quantization in LLMs: Comprehensive Taxonomy, Unified Evaluation, and Comparative Analysis",
+    "date": "2025-02-18",
+    "source": "hf-search"
+  },
+  {
+    "n": 6,
+    "id": "2411.02355",
+    "url": "https://huggingface.co/papers/2411.02355",
+    "title": "\"Give Me BF16 or Give Me Death\"? Accuracy-Performance Trade-Offs in LLM Quantization",
+    "date": "2024-11-04",
+    "source": "hf-search"
+  },
+  {
+    "n": 7,
+    "id": "2505.22179",
+    "url": "https://huggingface.co/papers/2505.22179",
+    "title": "Speculative Decoding Meets Quantization: Compatibility Evaluation and Hierarchical Framework Design",
+    "date": "2025-05-28",
+    "source": "hf-search"
+  },
+  {
+    "n": 8,
+    "id": "2610.12242",
+    "url": "https://huggingface.co/papers/2610.12242",
+    "title": "TokenRouter: Efficient Serving System for Token-Level LLM Routing",
+    "date": "2026-10-08",
+    "source": "hf-daily"
+  },
+  {
+    "n": 9,
+    "id": "2610.12327",
+    "url": "https://huggingface.co/papers/2610.12327",
+    "title": "SparseDecoding: Decoding-Aware Pruning for Accurate and Efficient LLM Inference",
+    "date": "2026-10-08",
+    "source": "hf-daily"
+  },
+  {
+    "n": 10,
+    "id": "2609.39068",
+    "url": "https://huggingface.co/papers/2609.39068",
+    "title": "SparseEngine: Sparse-First Inference Engine",
+    "date": "2026-09-30",
+    "source": "hf-daily"
+  },
+  {
+    "n": 11,
+    "id": "2402.14992",
+    "url": "https://huggingface.co/papers/2402.14992",
+    "title": "tinyBenchmarks: evaluating LLMs with fewer examples",
+    "date": "2024-02-22",
+    "source": "hf-search"
+  },
+  {
+    "n": 12,
+    "id": "2410.20011",
+    "url": "https://arxiv.org/abs/2410.20011",
+    "title": "A Survey of Small Language Models",
+    "date": "2024-10-25",
+    "source": "arxiv"
+  },
+  {
+    "n": 13,
+    "id": "2604.14191",
+    "url": "https://arxiv.org/abs/2604.14191",
+    "title": "Attention to Mamba: A Recipe for Cross-Architecture Distillation",
+    "date": "2026-04-01",
+    "source": "arxiv"
+  },
+  {
+    "n": 14,
+    "id": "2411.11843",
+    "url": "https://arxiv.org/abs/2411.11843",
+    "title": "Bi-Mamba: Towards Accurate 1-Bit State Space Models",
+    "date": "2024-11-18",
+    "source": "arxiv"
+  },
+  {
+    "n": 15,
+    "id": "2505.00949",
+    "url": "https://huggingface.co/papers/2505.00949",
+    "title": "Llama-Nemotron: Efficient Reasoning Models",
+    "date": "2025-05-02",
+    "source": "hf-search"
+  }
+]

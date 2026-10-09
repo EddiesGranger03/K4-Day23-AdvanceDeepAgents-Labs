@@ -1,0 +1,138 @@
+[
+  {
+    "n": 1,
+    "id": "2408.06072",
+    "url": "https://arxiv.org/abs/2408.06072",
+    "title": "CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer",
+    "date": "2024-08-12",
+    "source": "arxiv"
+  },
+  {
+    "n": 2,
+    "id": "2305.13311",
+    "url": "https://arxiv.org/abs/2305.13311",
+    "title": "VDT: General-purpose Video Diffusion Transformers via Mask Modeling",
+    "date": "2023-05-22",
+    "source": "arxiv"
+  },
+  {
+    "n": 3,
+    "id": "2405.05945",
+    "url": "https://arxiv.org/abs/2405.05945",
+    "title": "Lumina-T2X: Transforming Text into Any Modality, Resolution, and Duration via Flow-based Large Diffusion Transformers",
+    "date": "2024-05-09",
+    "source": "arxiv"
+  },
+  {
+    "n": 4,
+    "id": "2501.00103",
+    "url": "https://arxiv.org/abs/2501.00103",
+    "title": "LTX-Video: Realtime Video Latent Diffusion",
+    "date": "2024-12-30",
+    "source": "arxiv"
+  },
+  {
+    "n": 5,
+    "id": "2405.20279",
+    "url": "https://arxiv.org/abs/2405.20279",
+    "title": "CV-VAE: A Compatible Video VAE for Latent Generative Video Models",
+    "date": "2024-05-30",
+    "source": "arxiv"
+  },
+  {
+    "n": 6,
+    "id": "2610.06801",
+    "url": "https://huggingface.co/papers/2610.06801",
+    "title": "MC-Sparse: Deconstructing and Closing the Dense-Sparse Attention Gap in Diffusion Transformers",
+    "date": "2026-10-05",
+    "source": "hf-daily"
+  },
+  {
+    "n": 7,
+    "id": "2609.38562",
+    "url": "https://huggingface.co/papers/2609.38562",
+    "title": "LongTake: Learning to Sustain Dynamics in Long-Horizon Video Generation",
+    "date": "2026-09-29",
+    "source": "hf-daily"
+  },
+  {
+    "n": 8,
+    "id": "2503.21755",
+    "url": "https://huggingface.co/papers/2503.21755",
+    "title": "VBench-2.0: Advancing Video Generation Benchmark Suite for Intrinsic Faithfulness",
+    "date": "2025-03-27",
+    "source": "hf-search"
+  },
+  {
+    "n": 9,
+    "id": "2504.04907",
+    "url": "https://huggingface.co/papers/2504.04907",
+    "title": "Video-Bench: Human-Aligned Video Generation Benchmark",
+    "date": "2025-04-07",
+    "source": "hf-search"
+  },
+  {
+    "n": 10,
+    "id": "2512.09299",
+    "url": "https://huggingface.co/papers/2512.09299",
+    "title": "VABench: A Comprehensive Benchmark for Audio-Video Generation",
+    "date": "2025-12-10",
+    "source": "hf-search"
+  },
+  {
+    "n": 11,
+    "id": "2404.14381",
+    "url": "https://huggingface.co/papers/2404.14381",
+    "title": "TAVGBench: Benchmarking Text to Audible-Video Generation",
+    "date": "2024-04-22",
+    "source": "hf-search"
+  },
+  {
+    "n": 12,
+    "id": "2408.06070",
+    "url": "https://huggingface.co/papers/2408.06070",
+    "title": "ControlNeXt: Powerful and Efficient Control for Image and Video Generation",
+    "date": "2024-08-12",
+    "source": "hf-search"
+  },
+  {
+    "n": 13,
+    "id": "2305.13840",
+    "url": "https://huggingface.co/papers/2305.13840",
+    "title": "Control-A-Video: Controllable Text-to-Video Generation with Diffusion Models",
+    "date": "2024-05-23",
+    "source": "hf-search"
+  },
+  {
+    "n": 14,
+    "id": "2408.12590",
+    "url": "https://arxiv.org/abs/2408.12590",
+    "title": "xGen-VideoSyn-1: High-fidelity Text-to-Video Synthesis with Compressed Representations",
+    "date": "2024-08-22",
+    "source": "arxiv"
+  },
+  {
+    "n": 15,
+    "id": "2609.38466",
+    "url": "https://huggingface.co/papers/2609.38466",
+    "title": "PAMI: Part Anchored Motion for Text to Human-Object Interaction Generation",
+    "date": "2026-09-29",
+    "source": "hf-daily"
+  },
+  {
+    "n": 16,
+    "id": "2407.07667",
+    "url": "https://huggingface.co/papers/2407.07667",
+    "title": "VEnhancer: Generative Space-Time Enhancement for Video Generation",
+    "date": "2024-07-10",
+    "source": "hf-search"
+  },
+  {
+    "n": 17,
+    "id": "2606.20774",
+    "url": "https://huggingface.co/papers/2606.20774",
+    "title": "TriMotion: Modality-Agnostic Camera Control for Video Generation",
+    "date": "2026-06-18",
+    "source": "hf-search"
+  }
+]

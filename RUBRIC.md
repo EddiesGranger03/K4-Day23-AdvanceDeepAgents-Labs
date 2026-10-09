@@ -22,7 +22,7 @@ Bài cá nhân. Nộp: **public repo** GitHub gồm mã nguồn và thư mục `
 |---|---|---|
 | 1.1 `with_retry` | 6 | Backoff lũy thừa có jitter, tôn trọng `Retry-After`, chặn trên bằng `cap`, bỏ cuộc sau `attempts` lần (không ngủ sau lần cuối), không retry lỗi không thuộc `RetryableError`. |
 | 1.2 Năm công cụ | 8 | `arxiv_search`, `hf_daily_papers`, `hf_search_papers`, `web_search`, `web_fetch` trả đúng dạng bản ghi trong GUIDE, trả `NO RESULTS` khi rỗng, trả `ERROR: ...` khi nguồn hỏng và **không bao giờ ném ngoại lệ**. Mỗi công cụ lỗi trừ 1.6. |
-| 1.3 Exa | 3 | Xử lý giới hạn tốc độ của Exa (nó trả HTTP 200 chứ không phải 429) bằng retry; khóa `EXA_API_KEY` không bao giờ xuất hiện trong chuỗi trả về cho agent. |
+| 1.3 Exa | 3 | Gọi `/search` và `/contents` đúng cấu trúc; retry HTTP 429/5xx và lỗi mạng, tôn trọng `Retry-After`; khóa `EXA_API_KEY` không bao giờ xuất hiện trong chuỗi trả về cho agent. |
 | 1.4 arXiv | 3 | Gọi qua HTTPS, cách nhau ít nhất 3 giây, truy vấn được làm sạch (dấu nháy, dấu hai chấm, chuỗi rỗng không làm hỏng). |
 
 ## 2. Agent và uỷ quyền subagent - 20 điểm (Phần 2)

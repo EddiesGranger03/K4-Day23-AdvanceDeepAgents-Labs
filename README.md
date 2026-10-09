@@ -23,7 +23,7 @@ flowchart TD
     L -->|task x N, song song| R["researcher subagents"]
     R --> T1["arxiv_search"]
     R --> T2["hf_daily_papers / hf_search_papers"]
-    R --> T3["web_search / web_fetch (Exa MCP)"]
+    R --> T3["web_search / web_fetch (Exa API)"]
     R --> N["ghi chú trong sandbox: /tmp/work/research/notes"]
     N --> M["Lead gộp: sources.json + report.md"]
     M --> F["execute: finalize_citations.py (có sẵn)"]
@@ -39,7 +39,7 @@ Nguồn dữ liệu:
 | arXiv API `https://export.arxiv.org/api/query` | Tìm bài theo từ khóa, sắp theo ngày |
 | Hugging Face Daily Papers `/api/daily_papers` | Bài đang "trending": upvotes, githubRepo, summary |
 | Hugging Face papers search `/api/papers/search?q=` | Tìm bài theo chủ đề |
-| Web qua Exa MCP (`web_search_exa`, `web_fetch_exa`) | Blog, survey, trang dự án, nội dung đầy đủ của một URL |
+| Exa Search API (`/search`, `/contents`) | Blog, survey, trang dự án, nội dung đầy đủ của một URL |
 
 ## 3. Cấu trúc thư mục
 
@@ -75,7 +75,7 @@ Bạn cần ba loại khóa (điền vào `.env`, **không bao giờ commit** `.
 |---|---|---|
 | LLM (`LAB_MODEL` + khóa nhà cung cấp) | Nhà cung cấp bạn chọn (OpenAI, Anthropic, Google, OpenRouter, Ollama...) | Mô hình **phải hỗ trợ tool calling**. Chép tên mô hình từ tài liệu của nhà cung cấp. |
 | `DAYTONA_API_KEY` | https://app.daytona.io | Kiểm tra gói miễn phí / credit hiện hành. Không có tài khoản hoặc hết credit: đặt `SANDBOX=docker` để chạy sandbox trong container Docker cục bộ (xem `.env.example`). |
-| `EXA_API_KEY` (khuyến nghị) | https://dashboard.exa.ai/api-keys | Có thể chạy không khóa, nhưng bản miễn phí của MCP bị giới hạn tốc độ rất nhanh. |
+| `EXA_API_KEY` | https://dashboard.exa.ai/api-keys | Cần cho Exa Search API; đặt trong `.env` hoặc environment của shell, được gửi qua header `x-api-key`. |
 
 ## 5. Làm bài
 
@@ -91,6 +91,18 @@ python research.py "survey about world model"
 ```
 
 Kết quả nằm ở `reports/survey-about-world-model.md` cùng `.sources.json` và `.meta.json`.
+
+### Cách đọc thư mục `reports/`
+
+Mỗi chủ đề nghiên cứu sinh ra bộ ba tệp trong thư mục `reports/`:
+- **`<slug>.md`**: Báo cáo nghiên cứu đầy đủ dạng Markdown theo cấu trúc chuẩn (`TL;DR`, `Background`, các phân tích chuyên sâu, `Trends and open problems`, `## References`). Mọi số liệu và luận điểm đều có trích dẫn số `[n]` liên kết chặt chẽ tới nguồn.
+- **`<slug>.sources.json`**: Danh sách nguồn tài liệu tham khảo đã đối chiếu (chứa URL, tiêu đề, tóm tắt, ngày đăng, họ nguồn `arxiv`, `hf-daily`, `hf-search`, `web`).
+- **`<slug>.meta.json`**: Metadata giám sát quá trình nghiên cứu: thời gian chạy, số lần gọi subagent (`subagent_calls >= 3`), số họ nguồn thu thập (`source_families >= 3`), số lượng tool calls và token tiêu thụ.
+
+Để kiểm tra trích dẫn của từng báo cáo:
+```bash
+python check_citations.py reports/<slug>.md reports/<slug>.sources.json
+```
 
 ## 6. Chủ đề và nộp bài
 

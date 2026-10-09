@@ -1,0 +1,154 @@
+[
+  {
+    "n": 1,
+    "id": "2210.03629",
+    "url": "https://arxiv.org/abs/2210.03629",
+    "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+    "date": "2022-10-06",
+    "source": "arxiv"
+  },
+  {
+    "n": 2,
+    "id": "2305.04091",
+    "url": "https://arxiv.org/abs/2305.04091",
+    "title": "Plan-and-Solve Prompting: Improving Zero-Shot Chain-of-Thought Reasoning by Large Language Models",
+    "date": "2023-05-06",
+    "source": "arxiv"
+  },
+  {
+    "n": 3,
+    "id": "2411.01747",
+    "url": "https://arxiv.org/abs/2411.01747",
+    "title": "DynaSaur: Large Language Agents Beyond Predefined Actions",
+    "date": "2024-11-04",
+    "source": "arxiv"
+  },
+  {
+    "n": 4,
+    "id": "2605.27995",
+    "url": "https://huggingface.co/papers/2605.27995",
+    "title": "AsyncTool: Evaluating the Asynchronous Function Calling Capability under Multi-Task Scenarios",
+    "date": "2026-05-27",
+    "source": "hf-search"
+  },
+  {
+    "n": 5,
+    "id": "2609.31590",
+    "url": "https://huggingface.co/papers/2609.31590",
+    "title": "AgentWorld: Benchmarking Long-Horizon Collaboration of Multi-agent LLMs",
+    "date": "2026-09-25",
+    "source": "hf-search"
+  },
+  {
+    "n": 6,
+    "id": "2606.05670",
+    "url": "https://huggingface.co/papers/2606.05670",
+    "title": "Do More Agents Help? Controlled and Protocol-Aligned Evaluation of LLM Agent Workflows",
+    "date": "2026-06-04",
+    "source": "hf-search"
+  },
+  {
+    "n": 7,
+    "id": "2504.19793",
+    "url": "https://huggingface.co/papers/2504.19793",
+    "title": "Prompt Injection Attack to Tool Selection in LLM Agents (ToolHijacker)",
+    "date": "2025-08-24",
+    "source": "hf-search"
+  },
+  {
+    "n": 8,
+    "id": "2601.12449",
+    "url": "https://huggingface.co/papers/2601.12449",
+    "title": "AgenTRIM: Tool Risk Mitigation for Agentic AI",
+    "date": "2026-01-18",
+    "source": "hf-search"
+  },
+  {
+    "n": 9,
+    "id": "2609.08149",
+    "url": "https://huggingface.co/papers/2609.08149",
+    "title": "SWE-Bench Pro Verified: A Reliable Benchmark for Software Engineering Agents",
+    "date": "2026-09-08",
+    "source": "hf-search"
+  },
+  {
+    "n": 10,
+    "id": "2610.12289",
+    "url": "https://huggingface.co/papers/2610.12289",
+    "title": "TestPrism: Rethinking Test Evaluation Beyond a Single Reference",
+    "date": "2026-10-08",
+    "source": "hf-daily"
+  },
+  {
+    "n": 11,
+    "id": "2303.11366",
+    "url": "https://arxiv.org/abs/2303.11366",
+    "title": "Reflexion: Language Agents with Verbal Reinforcement Learning",
+    "date": "2023-03-20",
+    "source": "arxiv"
+  },
+  {
+    "n": 12,
+    "id": "2501.11425",
+    "url": "https://arxiv.org/abs/2501.11425",
+    "title": "Agent-R: Training Language Model Agents to Reflect via Iterative Self-Training",
+    "date": "2025-01-20",
+    "source": "arxiv"
+  },
+  {
+    "n": 13,
+    "id": "2604.11557",
+    "url": "https://huggingface.co/papers/2604.11557",
+    "title": "UniToolCall: Unifying Tool-Use Representation, Data, and Evaluation for LLM Agents",
+    "date": "2026-04-13",
+    "source": "hf-search"
+  },
+  {
+    "n": 14,
+    "id": "2609.39068",
+    "url": "https://huggingface.co/papers/2609.39068",
+    "title": "SparseEngine: Sparse-First Inference Engine",
+    "date": "2026-09-30",
+    "source": "hf-daily"
+  },
+  {
+    "n": 15,
+    "id": "2404.07972",
+    "url": "https://huggingface.co/papers/2404.07972",
+    "title": "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+    "date": "2024-04-11",
+    "source": "hf-search"
+  },
+  {
+    "n": 16,
+    "id": "2601.11044",
+    "url": "https://huggingface.co/papers/2601.11044",
+    "title": "AgencyBench: Benchmarking the Frontiers of Autonomous Agents in 1M-Token Real-World Contexts",
+    "date": "2026-01-16",
+    "source": "hf-search"
+  },
+  {
+    "n": 17,
+    "id": "2610.12419",
+    "url": "https://huggingface.co/papers/2610.12419",
+    "title": "OneSearch-VL: Unified Multimodal Deep Research Agent for Image and Video",
+    "date": "2026-10-08",
+    "source": "hf-daily"
+  },
+  {
+    "n": 18,
+    "id": "2510.24702",
+    "url": "https://huggingface.co/papers/2510.24702",
+    "title": "Agent Data Protocol: Unifying Datasets for Diverse, Effective Fine-tuning of LLM Agents",
+    "date": "2025-10-28",
+    "source": "hf-search"
+  },
+  {
+    "n": 19,
+    "id": "2607.02577",
+    "url": "https://huggingface.co/papers/2607.02577",
+    "title": "Benchmarking the Benchmarks: A Validity Audit of Tool-Calling Evaluation",
+    "date": "2026-06-30",
+    "source": "hf-search"
+  }
+]

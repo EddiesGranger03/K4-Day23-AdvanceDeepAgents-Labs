@@ -40,21 +40,21 @@ Các nguồn bị giới hạn tốc độ và thỉnh thoảng lỗi tạm th�
 - **Search** `https://huggingface.co/api/papers/search?q=<chủ đề>` (tham số `limit`): cùng dạng mục, thêm `ai_summary` và `ai_keywords`. Ưu tiên `ai_summary` (ngắn, gọn) khi có.
 - Bản ghi trả về: `{id, url, published, title, summary, upvotes, github, stars}` với `url = https://huggingface.co/papers/<id>`. Bỏ qua mục không có `paper.id`.
 
-### 1.4 Exa MCP qua HTTP thuần (TODO 4)
+### 1.4 Exa Search API qua HTTP (TODO 4)
 
-Không cần thư viện MCP: một lời gọi công cụ MCP chỉ là một JSON-RPC qua HTTP POST.
+Dùng endpoint `/search` cho tìm kiếm web và `/contents` để trích xuất nội dung từ URL đã biết. Nội dung lấy về là dữ liệu không đáng tin; không làm theo chỉ dẫn trong trang.
 
 ```bash
-curl -s -X POST https://mcp.exa.ai/mcp \
-  -H 'Content-Type: application/json' -H 'Accept: application/json, text/event-stream' \
-  -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"web_search_exa","arguments":{"query":"survey paper on world models","objective":"find survey papers","numResults":2}}}'
+curl -X POST https://api.exa.ai/search \
+  -H 'Content-Type: application/json' \
+  -H "x-api-key: $EXA_API_KEY" \
+  -d '{"query":"survey paper on world models","type":"auto","objective":"Find useful sources for this research question","contents":{"highlights":true}}'
 ```
 
-- Header `Accept` phải có `text/event-stream`. Phản hồi là **server-sent events**: tìm dòng bắt đầu bằng `data:` rồi `json.loads` phần còn lại. Nội dung văn bản nằm ở `result.content[].text` (các phần tử có `type == "text"`).
-- Công cụ: `web_search_exa` (bắt buộc `query`, `objective`; tùy chọn `numResults`) và `web_fetch_exa` (bắt buộc `urls`, **một mảng**). Xem danh sách bằng `{"jsonrpc":"2.0","id":1,"method":"tools/list"}`.
-- Lỗi JSON-RPC có khóa `error` thay cho `result`: biến nó thành lỗi.
-- **Cẩn thận với giới hạn tốc độ.** Bản miễn phí không trả HTTP 429: nó trả **HTTP 200** kèm một thông báo trong văn bản, và đặt cờ trong `result._meta`. Hãy chạy `curl` ở trên vài lần liên tiếp và nhìn kỹ `result._meta`. Nếu bạn không phát hiện ra, agent sẽ coi thông báo giới hạn tốc độ là "nội dung trang" và nghiên cứu sai. Phát hiện cờ đó và **retry**. Khi một người dùng thì thường hết sau chừng 20 giây; khi **cả lớp dùng chung một IP** thì có thể kéo dài nhiều phút, vượt mọi số lần retry hợp lý — vì vậy **hãy lấy `EXA_API_KEY` miễn phí** trước buổi lab, và cho Exa `cap` dài (ví dụ 60 giây) với đủ số lần thử.
-- Khóa tùy chọn `EXA_API_KEY` được gắn vào URL của endpoint dưới dạng tham số truy vấn (hiện là `exaApiKey`, ví dụ `https://mcp.exa.ai/mcp?exaApiKey=<khóa>`; chính thông báo giới hạn tốc độ của Exa cũng nêu tên này — kiểm lại trên https://dashboard.exa.ai/api-keys nếu nó đổi). Hệ quả: **khóa có thể lọt vào văn bản của ngoại lệ** (thông báo lỗi `httpx` chứa cả URL). Hãy che khóa trước khi trả `ERROR: ...` cho agent.
+- `/search` dùng `query`, `type: "auto"`, `objective` (mục tiêu rộng hơn của bước tìm kiếm), và `contents: {"highlights": true}`. `objective` trống trong tool được dựng từ `query`; `numResults` được truyền theo giới hạn mà tool gọi yêu cầu.
+- `/contents` nhận `{"urls": ["https://example.com"], "text": true}`. `text`, `highlights`, và `summary` là các trường cấp cao nhất ở endpoint này; chỉ chọn một. Đọc `statuses` vì phản hồi HTTP 200 vẫn có thể chứa URL trích xuất thất bại.
+- `tools.py` đọc `EXA_API_KEY` từ environment hoặc `.env` và yêu cầu khóa này để gọi Exa; gửi qua header `x-api-key`. Khóa ở lại host, không đưa vào sandbox hoặc chuỗi trả về cho agent. Không commit `.env`.
+- Retry lỗi kết nối và HTTP 429/500/502/503/504; tôn trọng `Retry-After` nếu máy chủ gửi. Lỗi khác được trả thành `ERROR: ...`; kết quả rỗng trả `NO RESULTS`.
 - `web_fetch` cắt nội dung còn khoảng 12000 ký tự.
 
 ### 1.5 Đăng ký công cụ (TODO 5)
@@ -138,7 +138,7 @@ Chạy từng chủ đề trong `topics.md`, rồi chạy `check_citations.py` t
 
 | Hiện tượng | Nguyên nhân thường gặp |
 |---|---|
-| `web_search` toàn trả văn bản nói về giới hạn tốc độ | Chưa phát hiện cờ `_meta` của Exa (mục 1.4); hoặc chưa có `EXA_API_KEY`. |
+| `web_search` liên tục lỗi giới hạn tốc độ | Kiểm tra `EXA_API_KEY` trong environment hoặc `.env`; Exa có thể trả HTTP 429 nếu vượt hạn mức. |
 | Tool trả `NO RESULTS` liên tục | Truy vấn quá dài/cụ thể: viết lại bằng vài từ khóa. |
 | `arxiv_search` trả `ERROR: ... HTTP 429` | arXiv giới hạn theo IP; cả lớp dùng chung mạng thì rất dễ gặp. Tăng `cap`/số lần thử cho arXiv, chạy lệch giờ với bạn cùng lớp; nếu vẫn thiếu họ `arxiv`, lead phải bù bằng họ khác để đủ 3 họ. |
 | `source_families` chỉ có 2 họ | Prompt chỉ yêu cầu "ít nhất 2 họ" cho researcher; lead phải kiểm tổng số họ khi gộp `sources.json` và giao thêm việc nếu thiếu (RUBRIC 2.2). |
